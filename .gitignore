@@ -1,0 +1,71 @@
+# ========================
+# Python / Django
+# ========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+
+# Virtual environment
+backend/venv/
+venv/
+.venv/
+env/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Database
+*.sqlite3
+db.sqlite3
+
+# Django
+backend/staticfiles/
+backend/media/
+*.log
+
+# ========================
+# Node.js / Next.js
+# ========================
+node_modules/
+frontend/node_modules/
+
+# Next.js build
+frontend/.next/
+frontend/out/
+
+# Environment variables
+frontend/.env.local
+frontend/.env.production
+frontend/.env.development
+
+# ========================
+# IDE / Editor
+# ========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Cursor
+.cursor/
+AGENTS.md
+CLAUDE.md
+
+# ========================
+# OS
+# ========================
+*.tmp
+*.bak
+*.cache
