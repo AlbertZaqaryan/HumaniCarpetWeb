@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"></head>
+<body style="font-family: 'Segoe UI', Arial, sans-serif; background: #f8f7f4; padding: 40px 0;">
+<div style="max-width: 560px; margin: 0 auto; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.06);">
+  <div style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 32px; text-align: center;">
+    <h1 style="color: #e8d5b7; margin: 0; font-size: 24px; letter-spacing: 2px;">HUMANICARPET</h1>
+  </div>
+  <div style="padding: 32px;">
+    <h2 style="color: #1a1a2e; margin-top: 0;">Thank you for your order!</h2>
+    <p style="color: #555; line-height: 1.6;">
+      Dear {{ order.first_name }},<br><br>
+      We've received your order and our team will review it shortly.
+      <strong>We will contact you within 24 hours</strong> to confirm the details.
+    </p>
+    <div style="background: #f8f7f4; border-radius: 12px; padding: 20px; margin: 24px 0;">
+      <p style="margin: 0 0 8px; color: #888; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Order Summary</p>
+      <p style="margin: 4px 0; color: #333;"><strong>Order ID:</strong> {{ order.id }}</p>
+      <p style="margin: 4px 0; color: #333;"><strong>Total:</strong> ${{ order.total }}</p>
+    </div>
+    {% for item in order.items.all %}
+    <div style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee;">
+      <span style="color: #333;">{{ item.title }} x{{ item.quantity }}</span>
+      <span style="color: #333; font-weight: 600;">${{ item.subtotal }}</span>
+    </div>
+    {% endfor %}
+    <p style="color: #888; font-size: 14px; margin-top: 24px;">
+      If you have any questions, feel free to reply to this email.
+    </p>
+  </div>
+  <div style="background: #f8f7f4; padding: 20px; text-align: center;">
+    <p style="color: #aaa; font-size: 12px; margin: 0;">HumaniCarpet — Handcrafted with love</p>
+  </div>
+</div>
+</body>
+</html>
