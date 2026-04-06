@@ -13,9 +13,22 @@ export const metadata: Metadata = {
   keywords: ["handmade rugs", "custom rugs", "carpet", "tufted rugs", "art rugs"],
 };
 
+const themeScript = `
+(function(){
+  try {
+    var s = localStorage.getItem('hc_theme');
+    var d = s === 'dark' || (!s && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    if (d) document.documentElement.classList.add('dark');
+  } catch(e) {}
+})();
+`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans`}>
         <ClientShell>{children}</ClientShell>
       </body>
